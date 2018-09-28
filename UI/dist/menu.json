@@ -1,0 +1,163 @@
+let menu = [
+{
+    'id': 1,
+    'foodname': 'Club Sandwich',
+    'foodImg': 'Club Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+    'id': 2,
+    'foodname': 'Chicken and Bacon Sandwich',
+    'foodImg': 'Chicken&Bacon Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+   'id': 3,
+    'foodname': 'Ham Sandwich',
+    'foodImg': 'Ham Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+  {
+    'id': 4,
+    'foodname': 'Oven-Chicken Roast Sandwich',
+    'foodImg': 'oven chicken roast sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+    'id': 5,
+    'foodname': 'Roast Beef Sandwich',
+    'foodImg': 'RoastBeef Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+   'id': 6,
+    'foodname': 'Rotisserie-Chicken Sandwich',
+    'foodImg': 'RotisserieChicken Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+  {
+    'id': 7,
+    'foodname': 'Steak Cheese Sandwich',
+    'foodImg': 'SteakCheese Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+    'id': 8,
+    'foodname': 'Tuna Sandwich',
+    'foodImg': 'Tuna Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+   'id': 9,
+    'foodname': 'Turkey Sandwich',
+    'foodImg': 'TurkeyBreast Sandwich.png',
+    'foodPrice': '1200.00',
+    'foodCat': 'SANDWICHES'
+},
+{
+    'id': 10,
+    'foodname': 'Club Salad',
+    'foodImg': 'ClubSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+    'id': 11,
+    'foodname': 'Chicken and Bacon Salad',
+    'foodImg': 'ChickenBaconSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+   'id': 12,
+    'foodname': 'Ham Salad',
+    'foodImg': 'HamSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+  {
+    'id': 13,
+    'foodname': 'Oven-Chicken Roast Salad',
+    'foodImg': 'OvenRoastedChickenSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+    'id': 14,
+    'foodname': 'Roast Beef Salad',
+    'foodImg': 'RoastBeefSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+   'id': 15,
+    'foodname': 'Rotisserie-Chicken Salad',
+    'foodImg': 'RotisserieChickenSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+  {
+    'id': 16,
+    'foodname': 'Steak Cheese Salad',
+    'foodImg': 'SteakCheeseSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+    'id': 17,
+    'foodname': 'Tuna Salad',
+    'foodImg': 'TunaSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+   'id': 18,
+    'foodname': 'Turkey Salad',
+    'foodImg': 'TunaSalad.png',
+    'foodPrice': '1600.00',
+    'foodCat': 'SALADS'
+},
+{
+    'id': 19,
+    'foodname': 'Bahamas Dream Smoothie',
+    'foodImg': 'Bahamas dream smoothie.png',
+    'foodPrice': '1000.00',
+    'foodCat': 'SMOOTHIES'
+},
+{
+    'id': 20,
+    'foodname': 'Green Dream Smoothie',
+    'foodImg': 'green dream smoothie.png',
+    'foodPrice': '1000.00',
+    'foodCat': 'SMOOTHIES'
+},
+{
+   'id': 21,
+    'foodname': 'Limey Dream Smoothie',
+   'foodImg': 'Limey dream Smoothie.png',
+    'foodPrice': '1000.00',
+    'foodCat': 'SMOOTHIES'
+},
+  {
+    'id': 22,
+    'foodname': 'Pink Paradise Smoothie',
+    'foodImg': 'Pink Paradise smoothie.png',
+    'foodPrice': '1000.00',
+    'foodCat': 'SMOOTHIES'
+},
+{
+   'id': 23,
+    'foodname': 'Tropic Dream Smoothie',
+   'foodImg': 'Tropic dream smoothie.png',
+    'foodPrice': '1000.00',
+    'foodCat': 'SMOOTHIES'
+}
+]

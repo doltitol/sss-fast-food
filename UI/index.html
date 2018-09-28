@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Salads, Sandwiches and Smoothies Home Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="header">
+    <div id="logo">
+      <img src="img/logo1.png" />
+    </div>
+
+    <div id="nav">
+      <ul>
+        <li> <a href="index.html">Home</a></li>
+        <li> <a href="menu.html">Menu</a></li>
+        <li> <a href="contact.html">Contact Us</a></li>
+        <li> <a href="#" class="badge1" data-badge="0">Cart</a></li>
+        <li> <a href="signup.html">Sign up</a></li>
+        <li> <a href="login.html">Log in</a></li>
+      </ul>
+      <a href="#" onclick="dropFunc()" class="icon">&#9776;</a>
+    </div>
+    <div id="dropNav" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#" class="badge1" data-badge="0">Cart</a>
+      <a href="signup.html">Sign up</a>
+      <a href="login.html">Log in</a>
+    </div>
+    <div id="dropCart" class="dropdown-content">
+      <table>
+          <thead>
+              <tr>
+                  <th>Images</th>
+                  <th>Food Item</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+              </tr>
+          </thead>
+          <tbody id="tBodyCart">
+
+          </tbody>
+      </table>
+      <div class="row">
+        <input type="button" id="clear-cart" class="btn btns1" value="Clear Cart">
+          <div class="col">
+              <div class="cart-page-total">
+                  <h3>Cart total</h3>
+                  <div>
+                    Total <span id="cart-total"></span> NGN
+                  </div>
+                  <div>
+                    There are <span id="cart-count"></span> items in your cart!
+                  </div>
+
+                  <a href="#">Proceed to checkout</a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!--end of Top Nav -->
+  <!--Slideshow -->
+  <div id="slideshow">
+    <div><img class="res" src="img/slideshow/img1.png" /></div>
+    <div><img class="res" src="img/slideshow/img2.png" /></div>
+    <div><img class="res" src="img/slideshow/img3.png" /></div>
+    <div><img class="res" src="img/slideshow/img4.png" /></div>
+  </div>
+  <!--End of slideshow-->
+  <div class="main">
+    <!--Explore Our Menu -->
+  <div id="exploreMenu">
+    <h2>
+      Explore our menu
+    </h2>
+    <div class="menuSection">
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/ClubSalad.png" />
+          <h4>
+            Salads
+          </h4>
+        </div>
+      </a>
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/Club Sandwich.png" />
+          <h4>
+            Sandwiches
+          </h4>
+        </div>
+      </a>
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/green dream smoothie.png" />
+          <h4>
+            Smoothies
+          </h4>
+        </div>
+      </a>
+    </div>
+  </div>
+   <!--End of Explore Our Menu -->
+   <!--Our Best Sellers -->
+  <div id="exploreBestSellers">
+    <h2>
+      Our Best Sellers
+    </h2>
+    <div class="menuSection">
+      <a href="menu.html">
+        <div class="article">
+            <img class="explore" src="img/Pink%20Paradise%20smoothie.png" />
+          <div style="margin-top: 4px;">
+            <div class="bestselText">
+              <div class="selText">Pink Paradise Smoothie</div>
+            </div>
+          </div>
+          <div class="priceText">
+            <span>
+                                        <span class="spanText">
+                                            <span class="spanPrice">Price</span>1200 NGN
+            </span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/green%20dream%20smoothie.png" />
+          <div style="margin-top: 4px;">
+            <div class="bestselText">
+              <div class="selText">Green Dream Smoothie</div>
+            </div>
+          </div>
+          <div class="priceText">
+            <span>
+                                        <span class="spanText">
+                                            <span class="spanPrice">Price</span>1200 NGN
+            </span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/RotisserieChickenSalad.png" />
+          <div style="margin-top: 4px;">
+            <div class="bestselText">
+              <div class="selText">Rotisserie Chicken Salad</div>
+            </div>
+          </div>
+          <div class="priceText">
+            <span>
+                                        <span class="spanText">
+                                            <span class="spanPrice">Price</span>1200 NGN
+            </span>
+            </span>
+          </div>
+        </div>
+      </a>
+      <a href="menu.html">
+        <div class="article">
+          <img class="explore" src="img/Club%20Sandwich.png" />
+          <div style="margin-top: 4px;">
+            <div class="bestselText">
+              <div class="selText">Club Sandwich</div>
+            </div>
+          </div>
+          <div class="priceText">
+            <span>
+                                        <span class="spanText">
+                                            <span class="spanPrice">Price</span>1200 NGN
+            </span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!--End of Our Best Sellers -->
+  </div>
+  <!--footer-->
+  <div id="footer">
+    <div class="footer_wrap">
+      <div class="copyright">
+							© Salads, Sandwiches and Smoothies
+						</div>
+     <div class="social">
+       <a href="#"><i class="fa fa-facebook"></i></a>
+       <a href="#"><i class="fa fa-twitter"></i></a>
+       <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <!--end of footer-->
+  <script src="dist/jquery.js"></script>
+  <script src="dist/header.js"></script>
+  <script src="dist/sssCart.js"></script>
+  <script src="dist/cart.js"></script>
+  <script src="dist/slideshow.js"></script>
+</body>
+
+</html>
