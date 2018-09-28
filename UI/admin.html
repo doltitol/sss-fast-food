@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Salads, Sandwiches and Smoothies Admin Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="header">
+    <div id="logo">
+      <img src="img/logo1.png" />
+    </div>
+
+    <div id="nav">
+      <ul>
+        <li> <a href="index.html">Home</a></li>
+        <li> <a href="menu.html">Menu</a></li>
+        <li> <a href="contact.html">Contact Us</a></li>
+        <li> <a href="#" class="badge1" data-badge="0">Cart</a></li>
+        <li> <a href="signup.html">Sign up</a></li>
+        <li> <a href="login.html">Log in</a></li>
+      </ul>
+      <a href="#" onclick="dropFunc()" class="icon">&#9776;</a>
+    </div>
+    <div id="dropNav" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#" class="badge1" data-badge="0">Cart</a>
+      <a href="signup.html">Sign up</a>
+      <a href="login.html">Log in</a>
+    </div>
+    <div id="dropCart" class="dropdown-content">
+      <table>
+          <thead>
+              <tr>
+                  <th>Images</th>
+                  <th>Food Item</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+              </tr>
+          </thead>
+          <tbody id="tBodyCart">
+
+          </tbody>
+      </table>
+      <div class="row">
+        <input type="button" id="clear-cart" class="btn btns1" value="Clear Cart">
+          <div class="col">
+              <div class="cart-page-total">
+                  <h3>Cart total</h3>
+                  <div>
+                    Total <span id="cart-total"></span> NGN
+                  </div>
+                  <div>
+                    There are <span id="cart-count"></span> items in your cart!
+                  </div>
+
+                  <a href="#">Proceed to checkout</a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!--end of Top Nav -->
+  <div class="main">
+    <div class="containerAdmin">
+    <h2 class="h2">Admin Page</h2>
+    <div class="tab">
+      <button class="tablinks active" onclick="adminView(event, 'users')">Users</button>
+      <button class="tablinks" onclick="adminView(event, 'menu')">Menu</button>
+      <button class="tablinks" onclick="adminView(event, 'orders')">Orders</button>
+        <button class="tablinks" onclick="adminView(event, 'account')">Account Information</button>
+    </div>
+    <div id="account" class="tabcontent">
+      <h3 class="h3">Admin Account Information</h3>
+    <div class="container">
+  <form>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="emailadd">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="emailadd" name="emailadd">
+      </div>
+    </div>
+       <div class="row">
+      <div class="col-25">
+        <label for="pwd">Old Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="pwd" name="pwd">
+      </div>
+    </div>
+       <div class="row">
+      <div class="col-25">
+        <label for="newpwd">New Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="newpwd" name="newpwd">
+      </div>
+    </div>
+    <div class="row">
+      <input class="btn btns"type="submit" value="Save">
+    </div>
+  </form>
+</div>
+<div id="footerAdmin">
+    <div class="footer_wrap">
+      <div class="copyright">
+        © Salads, Sandwiches and Smoothies
+      </div>
+      <div class="social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    </div>
+    <!--end of footer-->
+    </div><!--end of account-->
+    <div id="users" class="tabcontent" style="display: block">
+      <h3 class="h3">USERS</h3>
+      <div class="container">
+        <div>
+          <ul class="subView">
+            <a class="sublink active" href="#" onclick="miniView(event, 'searchUsers')"><li>Get All Users</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'postUsers')"><li>Add A User</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'putUsers')"><li>Update A User</li></a>
+          </ul>
+        </div>
+        <div id="searchUsers" class="subtab" style="display: block">
+          <h3>Get All Users</h3>
+          <div>
+            <button class="btns1" id="getuser-button">Get All Users</button>
+            <h2>Users List</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>User Category</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tuser">
+                </tbody>
+              </table>
+          </div>
+
+        </div>
+        <div id="postUsers" class="subtab">
+          <h3>Add A User</h3>
+          <h3 class="h3">ENTER USER DETAILS</h1>
+          <form id="createuser-form">
+          <div class="row">
+            <div class="col-25">
+              <label for="create-fullname">Full Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="create-fullname">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-username">Username</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-username">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-email1">Email</label>
+              </div>
+              <div class="col-75">
+                <input type="email" id="create-email1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-phonenum">Phone Number</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-phonenum">
+              </div>
+            </div>
+            <div class="row">
+              <h3 class="h3">Address</h3>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-address1">Address 1</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-address1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-address2">Address 2</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-address2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-city">City</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-city">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-postcode">Post Code</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-postcode">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-state">State</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-state">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-country">Country</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-country">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-usercat">User Category</label>
+              </div>
+              <div class="col-75">
+                <select id="create-usercat">
+                  <option value="ADMIN">ADMIN</option>
+                  <option value="USER">USER</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+            <button class="btns1">Add User</button>
+            </div>
+          </form>
+
+        </div>
+        <div id="putUsers" class="subtab">
+          <h3>Update A User</h3>
+          <h4>Search User by ID</h2>
+            <br>
+          <div class="row">
+              <input type="text" id="searchUser" />
+                <button class="btns1" id="get_user">Search User</button>
+          </div>
+          <form id="searchUser-form">
+          <div class="row">
+            <div class="col-25">
+              <label for="search-fullname">Full Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="search-fullname">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-username">Username</label>
+              </div>
+              <div class="col-75">
+                  <input type="text" id="search-username">
+              </div>
+              </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-email1">Email</label>
+              </div>
+              <div class="col-75">
+                <input type="email" id="search-email1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-phonenum">Phone Number</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-phonenum">
+              </div>
+            </div>
+            <div class="row">
+              <h3 class="h3">Address</h3>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-address1">Address 1</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-address1">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-address2">Address 2</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-address2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-city">City</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-city">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-postcode">Post Code</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-postcode">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-state">State</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-state">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-country">Country</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-country">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-usercat">User Category</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-usercat">
+              </div>
+            </div>
+            <div class="row">
+            <button class="btns1">Update User</button>
+            </div>
+          </form>
+          <br>
+        </div>
+      </div>
+      <div id="footerAdmin">
+          <div class="footer_wrap">
+            <div class="copyright">
+              © Salads, Sandwiches and Smoothies
+            </div>
+            <div class="social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          </div>
+          <!--end of footer-->
+    </div><!--end of users div-->
+    <br>
+    <div id="menu" class="tabcontent">
+      <h3 class="h3">MENU</h3>
+      <div class="container">
+        <div>
+          <ul class="subView">
+            <a class="sublink active" href="#" onclick="miniView(event, 'searchMenu')"><li>Get All Menu</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'postMenu')"><li>Add A Menu</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'putMenu')"><li>Update A Menu</li></a>
+          </ul>
+        </div>
+        <div id="searchMenu" class="subtab" style="display: block">
+          <h3>Get All Menu</h3>
+          <div>
+          <button class="btns1" id="getfood-button">Get All Menu</button>
+          <h2>Menu List</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Food Name</th>
+                  <th>Food Image</th>
+                  <th>Food Price</th>
+                  <th>Food Category</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tfood">
+              </tbody>
+            </table>
+        </div>
+
+        </div>
+        <div id="postMenu" class="subtab">
+          <h3>Add A Menu</h3>
+          <h3 class="h3">ENTER FOOD ITEM DETAILS</h1>
+          <form id="createfood-form">
+          <div class="row">
+            <div class="col-25">
+              <label for="create-foodname">Food Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="create-foodname">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-foodImg">Food Image</label>
+              </div>
+              <div class="col-75">
+                <input type="file" id="create-foodImg" onchange="readImage(this);">
+                <img id="create-image" src="#" width="50px" height="50px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-foodprice">Price</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="create-foodprice">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="create-foodcat">Food Category</label>
+              </div>
+              <div class="col-75">
+                <select id="create-foodcat">
+                  <option value="SALADS">SALADS</option>
+                  <option value="SANDWICHES">SANDWICHES</option>
+                  <option value="SMOOTHIES">SMOOTHIES</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+            <button class="btns1">Add Food</button>
+            </div>
+          </form>
+
+        </div>
+        <div id="putMenu" class="subtab">
+          <h3>Update A Menu</h3>
+          <h4>Search Food by ID</h2>
+            <br>
+          <div class="row">
+              <input type="text" id="searchFood" />
+                <button class="btns1" id="get_food">Search Food</button>
+          </div>
+          <form id="searchFood-form">
+          <div class="row">
+            <div class="col-25">
+              <label for="search-foodname">Food Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="search-foodname">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-foodimage">Food Image</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-foodimage">
+                <input type="file" id="search-foodimage2" onchange="postImage(this);">
+                <div><img id="search-image" src="#" width="50px" height="50px"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-foodprice">Food Price</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-foodprice">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="search-foodcat">Food Category</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="search-foodcat">
+              </div>
+            </div>
+            <div class="row">
+            <button class="btns1">Update Food</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div id="footerAdmin">
+          <div class="footer_wrap">
+            <div class="copyright">
+              © Salads, Sandwiches and Smoothies
+            </div>
+            <div class="social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          </div>
+          <!--end of footer-->
+    </div><!--end of menu div-->
+    <div id="orders" class="tabcontent">
+      <h3 class="h3">ORDERS</h3>
+      <div class="container">
+        <div>
+          <ul class="subView">
+            <a class="sublink active" href="#" onclick="miniView(event, 'searchOrders')"><li>Get All Orders</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'postOrders')"><li>Add A Order</li></a>
+            <a class="sublink" href="#" onclick="miniView(event, 'putOrders')"><li>Update A Order</li></a>
+          </ul>
+        </div>
+        <div id="searchOrders" class="subtab" style="display: block">
+          <h3>Get All Orders</h3>
+          <div>
+              <button class="btns1" id="get-button">Get All Orders</button>
+              <h2>Order List</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Order description</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ti">
+                  </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="postOrders" class="subtab">
+          <h3>Add A Order</h3>
+          <h3 class="h3">ENTER ORDER DETAILS</h1>
+           <form id="create-form">
+           <div class="row">
+             <div class="col-25">
+               <label for="create-input">Enter Username</label>
+             </div>
+             <div class="col-75">
+                 <input type="text" id="create-input">
+             </div>
+             </div>
+             <div class="row">
+               <div class="col-25">
+                 <label for="create-email">Enter Email Adress</label>
+               </div>
+               <div class="col-75">
+                 <input type="text" id="create-email">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-25">
+                 <label for="create-phone">Enter Phone Number</label>
+               </div>
+               <div class="col-75">
+                 <input type="text" id="create-phone">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-25">
+                 <label for="create-desc">Order Description</label>
+               </div>
+               <div class="col-75">
+                 <input type="text" id="create-desc" class="break">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-25">
+                 <label for="create-totalPrice">Total Price</label>
+               </div>
+               <div class="col-75">
+                 <input type="text" id="create-totalPrice">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-25">
+                 <label for="create-status">Enter Status</label>
+               </div>
+               <div class="col-75">
+                 <select id="create-status">
+                   <option value="ACCEPTED">ACCEPTED</option>
+                   <option value="REJECTED">REJECTED</option>
+                   <option value="COMPLETED">COMPLETED</option>
+                 </select>
+               </div>
+             </div>
+             <div class="row">
+             <button class="btns1">Add Order</button>
+             </div>
+           </form>
+
+        </div>
+        <div id="putOrders" class="subtab">
+          <h3>Update A Order</h3>
+          <h4>Search Order by ID</h2>
+              <br>
+            <div class="row">
+                <input type="text" id="searchOrder" />
+                  <button class="btns1" id="get_order">Search Order</button>
+            </div>
+            <form id="searchOrder-form">
+            <div class="row">
+              <div class="col-25">
+                <label for="search-input">Enter Username</label>
+              </div>
+              <div class="col-75">
+                  <input type="text" id="search-input">
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="search-email">Enter Email Adress</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="search-email">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="search-phone">Enter Phone Number</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="search-phone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="search-desc">Order Description</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="search-desc" class="break">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="search-totalPrice">Total Price</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="search-totalPrice">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="search-status">Enter Status</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="search-status">
+                </div>
+              </div>
+              <div class="row">
+              <button class="btns1">Update Order</button>
+              </div>
+            </form>
+        </div>
+      </div>
+      <div id="footerAdmin">
+          <div class="footer_wrap">
+            <div class="copyright">
+              © Salads, Sandwiches and Smoothies
+            </div>
+            <div class="social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          </div>
+          <!--end of footer-->
+    </div><!--end of orders div-->
+
+</div>
+
+  <script src="dist/jquery.js"></script>
+  <script src="dist/header.js"></script>
+  <script src="dist/sssCart.js"></script>
+  <script src="dist/cart.js"></script>
+  <script type="text/javascript" src="dist/menu.json"></script>
+  <script src="dist/adminUser.js"></script>
+</body>
+
+</html>
